@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/logo.png";
 
 function HeroSection() {
   const scrollToSection = (id) => {
@@ -16,6 +17,17 @@ function HeroSection() {
       {/* Background Decorative Circle */}
       <div className="absolute top-10 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-72 h-72 bg-sky-300/20 rounded-full blur-3xl"></div>
+
+ {/* ✅ Logo Section */}
+        <div className="flex justify-center mb-6">
+          <div className="bg-white rounded-full p-3 sm:p-4 shadow-lg flex items-center justify-center">
+            <img
+              src={logo}
+              alt="Janardan Insurance Logo"
+              className="h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20 object-contain"
+            />
+          </div>
+        </div>
 
       {/* Main Content */}
       <div className="relative z-10 text-center max-w-3xl mx-auto px-6 animate-fadeInUp">
