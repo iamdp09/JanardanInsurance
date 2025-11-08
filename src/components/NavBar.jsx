@@ -259,7 +259,10 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-sky-600 via-blue-500 to-sky-400 text-white shadow-md px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center relative overflow-visible z-50">
+    // <nav className="bg-gradient-to-r from-sky-600 via-blue-500 to-sky-400 text-white shadow-md px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center relative overflow-visible z-50">
+    <nav className="bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-500 text-white shadow-md px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center relative overflow-visible z-50">
+
+
       {/* Left: Logo + Name */}
       <div
         onClick={() => scrollToSection("home")}
@@ -329,7 +332,7 @@ function NavBar() {
 
       {/* Mobile Dropdown */}
       <div
-        className={`absolute top-full left-0 w-full bg-sky-600 text-center overflow-hidden transition-all duration-500 ease-in-out lg:hidden shadow-lg ${
+        className={`absolute top-full left-0 w-full bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-500 text-center overflow-hidden transition-all duration-500 ease-in-out lg:hidden shadow-lg ${
           menuOpen ? "max-h-64 opacity-100 py-4" : "max-h-0 opacity-0 py-0"
         }`}
       >
@@ -365,6 +368,9 @@ function NavBar() {
 }
 
 export default NavBar;
+
+
+
 
 
 

@@ -204,6 +204,83 @@
 
 
 
+// import React from "react";
+// import consultation from "../assets/consultant.png";
+// import policy from "../assets/policy.png";
+// import available from "../assets/24:7.png";
+// import planning from "../assets/planning.png";
+// import support from "../assets/support.png";
+// import assistance from "../assets/call-center.png";
+
+// function Services() {
+//   const services = [
+//     {
+//       img: consultation,
+//       title: "Free Consultation",
+//       desc: "We guide you to choose the perfect insurance plan based on your needs and lifestyle.",
+//     },
+//     {
+//       img: support,
+//       title: "Quick Claim Support",
+//       desc: "Our experts help you settle claims fast — with transparency and minimal paperwork.",
+//     },
+//     {
+//       img: policy,
+//       title: "Policy Renewal Reminders",
+//       desc: "Never miss your renewal date! We notify you in advance for a hassle-free experience.",
+//     },
+//     {
+//       img: available,
+//       title: "24/7 Assistance",
+//       desc: "Our support team is available round the clock through call or WhatsApp.",
+//     },
+//     {
+//       img: planning,
+//       title: "Custom Coverage Plans",
+//       desc: "We design tailored insurance solutions to perfectly match your specific requirements.",
+//     },
+//     {
+//       img: assistance,
+//       title: "Document Assistance",
+//       desc: "From policy papers to claims — we take care of all your documentation needs.",
+//     },
+//   ];
+
+//   return (
+//     <section id="services" className="container mx-auto px-6 sm:px-10 mt-24">
+//       <h2 className="text-3xl sm:text-4xl font-bold font-pops text-center mb-10 text-gray-800">
+//         Our Services
+//       </h2>
+
+//       <div className="bg-white w-full rounded-2xl shadow-lg p-6 sm:p-10">
+//         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+//           {services.map((item, index) => (
+//             <li
+//               key={index}
+//               className="flex flex-col items-center justify-center bg-sky-50 hover:bg-sky-100 transition-all duration-300 rounded-xl p-6 w-full sm:w-64 h-auto sm:h-56 shadow-sm hover:shadow-md transform hover:-translate-y-1"
+//             >
+//               <img
+//                 src={item.img}
+//                 alt={item.title}
+//                 className="h-12 w-12 sm:h-14 sm:w-14 mb-3"
+//               />
+//               <h3 className="text-lg sm:text-xl font-semibold text-gray-800 text-center">
+//                 {item.title}
+//               </h3>
+//               <p className="text-sm sm:text-base text-gray-600 text-center mt-2 leading-snug">
+//                 {item.desc}
+//               </p>
+//             </li>
+//           ))}
+//         </ul>
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default Services;
+
+
 import React from "react";
 import consultation from "../assets/consultant.png";
 import policy from "../assets/policy.png";
@@ -248,23 +325,27 @@ function Services() {
 
   return (
     <section id="services" className="container mx-auto px-6 sm:px-10 mt-24">
-      <h2 className="text-3xl sm:text-4xl font-bold font-pops text-center mb-10 text-gray-800">
+      <h2 className="text-3xl sm:text-4xl font-bold font-pops text-center mb-12 text-blue-900">
         Our Services
       </h2>
 
-      <div className="bg-white w-full rounded-2xl shadow-lg p-6 sm:p-10">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="relative bg-white rounded-2xl shadow-xl p-8 sm:p-12 overflow-hidden">
+        {/* Decorative blurred gradients */}
+        <div className="absolute top-0 right-0 w-60 h-60 bg-purple-400/25 rounded-full blur-[90px]"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-300/25 rounded-full blur-[100px]"></div>
+
+        <ul className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {services.map((item, index) => (
             <li
               key={index}
-              className="flex flex-col items-center justify-center bg-sky-50 hover:bg-sky-100 transition-all duration-300 rounded-xl p-6 w-full sm:w-64 h-auto sm:h-56 shadow-sm hover:shadow-md transform hover:-translate-y-1"
+              className="flex flex-col items-center justify-start bg-white w-full sm:w-72 h-auto rounded-2xl shadow-md hover:shadow-xl p-6 transition-all duration-300 hover:-translate-y-2 border border-gray-100"
             >
               <img
                 src={item.img}
                 alt={item.title}
-                className="h-12 w-12 sm:h-14 sm:w-14 mb-3"
+                className="h-14 w-14 sm:h-16 sm:w-16 mb-4"
               />
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 text-center">
+              <h3 className="text-lg sm:text-xl font-semibold text-blue-900 text-center font-pops">
                 {item.title}
               </h3>
               <p className="text-sm sm:text-base text-gray-600 text-center mt-2 leading-snug">
@@ -279,3 +360,4 @@ function Services() {
 }
 
 export default Services;
+
