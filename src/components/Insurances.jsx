@@ -308,15 +308,15 @@ function Insurances() {
           {[
             {
               text: "Janardan Insurance helped me find the best car insurance at the lowest rate!",
-              name: "Rajesh Patel",
+              name: "Pradeep Sharma",
             },
             {
               text: "The team is supportive and makes the process easy.",
-              name: "Sneha Sharma",
+              name: "Rahul Maheshwari",
             },
             {
               text: "Their service is professional and responsive.",
-              name: "Nikhil Verma",
+              name: "Rakesh Sharma",
             },
           ].map((item, index) => (
             <div
