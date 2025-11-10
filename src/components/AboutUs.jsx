@@ -100,8 +100,8 @@ function AboutUs() {
       <div className="relative bg-white rounded-2xl shadow-xl p-8 sm:p-12 flex flex-col md:flex-row items-center gap-12 overflow-hidden">
 
         {/* Background Gradient Blurs */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-400/25 rounded-full blur-[90px]"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-300/25 rounded-full blur-[100px]"></div>
+        {/* <div className="absolute top-0 right-0 w-64 h-64 bg-purple-400/25 rounded-full blur-[90px]"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-300/25 rounded-full blur-[100px]"></div> */}
 
         {/* Left: Image */}
         <div className="relative z-10 md:w-1/2 w-full flex justify-center">
@@ -113,14 +113,14 @@ function AboutUs() {
         </div>
 
         {/* Right: Content */}
-        <div className="relative z-10 md:w-1/2 text-blue-900 text-center md:text-left">
+        <div className="relative z-10 md:w-1/2 text-gray-800 text-center md:text-left">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            About <span className="text-purple-600">Janardan Insurance</span>
+            About <span className="text-indigo-900">Janardan Insurance</span>
           </h2>
 
           <p className="text-base sm:text-lg leading-relaxed mb-4 text-gray-700">
             Founded with the vision of making insurance simple and accessible, 
-            <span className="font-semibold text-purple-600"> Janardan Insurance </span>
+            <span className="font-semibold text-indigo-800"> Janardan Insurance </span>
             helps individuals and families find the right protection for every stage of life.
           </p>
 

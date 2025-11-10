@@ -260,7 +260,7 @@ function NavBar() {
 
   return (
     // <nav className="bg-gradient-to-r from-sky-600 via-blue-500 to-sky-400 text-white shadow-md px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center relative overflow-visible z-50">
-    <nav className="bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-500 text-white shadow-md px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center relative overflow-visible z-50">
+    <nav className="bg-indigo-900 text-white shadow-md px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center relative overflow-visible z-50">
 
 
       {/* Left: Logo + Name */}
@@ -332,32 +332,32 @@ function NavBar() {
 
       {/* Mobile Dropdown */}
       <div
-        className={`absolute top-full left-0 w-full bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-500 text-center overflow-hidden transition-all duration-500 ease-in-out lg:hidden shadow-lg ${
+        className={`absolute top-full left-0 w-full bg-indigo-900 text-center overflow-hidden transition-all duration-500 ease-in-out lg:hidden shadow-lg ${
           menuOpen ? "max-h-64 opacity-100 py-4" : "max-h-0 opacity-0 py-0"
         }`}
       >
         <ul className="space-y-3 font-pops text-lg">
           <li
             onClick={() => scrollToSection("home")}
-            className="hover:bg-sky-500 py-2 cursor-pointer transition"
+            className="hover:bg-indigo-800 py-2 cursor-pointer transition"
           >
             Home
           </li>
           <li
             onClick={() => scrollToSection("services")}
-            className="hover:bg-sky-500 py-2 cursor-pointer transition"
+            className="hover:bg-indigo-800 py-2 cursor-pointer transition"
           >
             Services
           </li>
           <li
             onClick={() => scrollToSection("about")}
-            className="hover:bg-sky-500 py-2 cursor-pointer transition"
+            className="hover:bg-indigo-800 py-2 cursor-pointer transition"
           >
             About
           </li>
           <li
             onClick={() => scrollToSection("contact")}
-            className="hover:bg-sky-500 py-2 cursor-pointer transition"
+            className="hover:bg-indigo-800 py-2 cursor-pointer transition"
           >
             Contact
           </li>

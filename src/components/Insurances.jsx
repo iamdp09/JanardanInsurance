@@ -250,7 +250,7 @@ import car from "../assets/v2_icon_car.svg";
 import family from "../assets/v2_icon_family.svg";
 import health from "../assets/v2_icon_health.svg";
 import fire from "../assets/fire-svgrepo-com.svg";
-import material from "../assets/material-svgrepo-com.svg";
+import material from "../assets/warehouse.svg";
 
 function Insurances() {
   const insurances = [
@@ -268,12 +268,12 @@ function Insurances() {
       <section className="relative bg-white rounded-2xl mx-4 sm:mx-8 md:mx-10 mt-16 shadow-xl py-16 overflow-hidden">
         
         {/* Background Gradient Blurs */}
-        <div className="absolute top-10 right-10 w-60 h-60 bg-purple-400/25 rounded-full blur-[90px]"></div>
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-indigo-300/25 rounded-full blur-[100px]"></div>
+        {/* <div className="absolute top-10 right-10 w-60 h-60 bg-purple-400/25 rounded-full blur-[90px]"></div>
+        <div className="absolute bottom-10 left-10 w-72 h-72 bg-indigo-300/25 rounded-full blur-[100px]"></div> */}
 
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-6 md:px-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center font-pops text-blue-900 mb-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center font-pops text-indigo-900 mb-10">
             Our Insurance Plans
           </h2>
 
@@ -289,7 +289,7 @@ function Insurances() {
                   alt={item.name}
                   className="h-12 w-12 mb-3 object-contain"
                 />
-                <p className="text-center font-pops text-sm sm:text-base font-semibold text-blue-900 leading-tight">
+                <p className="text-center font-pops text-sm sm:text-base font-semibold text-indigo-900 leading-tight">
                   {item.name}
                 </p>
               </li>
@@ -300,7 +300,7 @@ function Insurances() {
 
       {/* ===== Testimonials Section ===== */}
       <section className="mt-20 px-4 sm:px-6 md:px-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 font-pops text-blue-900">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 font-pops text-indigo-900">
           What Our Clients Say
         </h2>
 
@@ -326,7 +326,7 @@ function Insurances() {
               <p className="text-gray-700 italic text-sm sm:text-base leading-relaxed">
                 "{item.text}"
               </p>
-              <p className="mt-4 font-semibold text-blue-900 text-sm sm:text-base">
+              <p className="mt-4 font-semibold text-indigo-900 text-sm sm:text-base">
                 – {item.name}
               </p>
             </div>

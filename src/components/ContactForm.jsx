@@ -276,51 +276,32 @@
 // export default ContactForm;
 
 
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
 
 function ContactForm() {
-  const form = useRef();
-  const [isSending, setIsSending] = useState(false);
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     message: "",
   });
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setIsSending(true);
-    setSent(false);
-    setError("");
-
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setIsSending(false);
-          setSent(true);
-          form.current.reset();
-        },
-        (err) => {
-          setIsSending(false);
-          setError("❌ Failed to send. Please try again later.");
-          console.error(err);
-        }
-      );
-  };
+  const [error, setError] = useState("");
 
   const sendToWhatsApp = () => {
-    const phoneNumber = "919979283940";
-    const text = `Hello, I'm ${formData.name}. My email is ${formData.email}.
-Message: ${formData.message}`;
+    // Trim whitespace
+    const name = formData.name.trim();
+    const message = formData.message.trim();
+
+    // Validation: check for empty fields
+    if (!name || !message) {
+      setError("Please fill out both your name and message before sending.");
+      return;
+    }
+
+    // Clear error if all good
+    setError("");
+
+    const phoneNumber = "919979283940"; // Client's WhatsApp number (with country code)
+    const text = `Hello, I'm ${name}.\nMessage: ${message}`;
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       text
     )}`;
@@ -333,46 +314,30 @@ Message: ${formData.message}`;
       className="container mx-auto px-4 sm:px-10 mt-20 mb-20 font-pops"
     >
       <div className="relative bg-white rounded-2xl shadow-xl p-6 sm:p-10 flex flex-col items-center justify-center overflow-hidden">
-        {/* Gradient Blur Decoration */}
-        <div className="absolute top-10 right-10 w-72 h-72 bg-purple-400/20 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-indigo-300/20 rounded-full blur-[90px]"></div>
+        {/* Decorative Blurs */}
+        {/* <div className="absolute top-10 right-10 w-72 h-72 bg-purple-400/10 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-10 left-10 w-72 h-72 bg-indigo-300/10 rounded-full blur-[90px]"></div> */}
 
         {/* Title */}
         <h2 className="relative z-10 text-3xl sm:text-4xl font-bold text-blue-900 mb-8 text-center">
           Contact Us
         </h2>
 
-        {/* Form */}
-        <form
-          ref={form}
-          onSubmit={sendEmail}
-          className="relative z-10 w-full max-w-lg bg-gradient-to-r from-purple-50 via-indigo-50 to-purple-50 p-6 sm:p-8 rounded-2xl shadow-inner flex flex-col space-y-5"
-        >
-          <div className="flex flex-col sm:flex-row gap-4">
-            <input
-              type="text"
-              name="from_name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              className="flex-1 p-3 sm:p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm sm:text-base"
-              required
-            />
-            <input
-              type="email"
-              name="from_email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              className="flex-1 p-3 sm:p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm sm:text-base"
-              required
-            />
-          </div>
+        {/* WhatsApp Form */}
+        <div className="relative z-10 w-full max-w-lg bg-gradient-to-r from-purple-50 via-indigo-50 to-purple-50 p-6 sm:p-8 rounded-2xl shadow-inner flex flex-col space-y-5">
+          {/* Name Field */}
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={(e) =>
+              setFormData({ ...formData, name: e.target.value })
+            }
+            className="p-3 sm:p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm sm:text-base"
+          />
 
+          {/* Message Field */}
           <textarea
             rows="5"
             name="message"
@@ -382,49 +347,31 @@ Message: ${formData.message}`;
               setFormData({ ...formData, message: e.target.value })
             }
             className="p-3 sm:p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm sm:text-base resize-none"
-            required
           ></textarea>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-between mt-4">
-            {/* Email Button */}
-            <button
-              type="submit"
-              disabled={isSending}
-              className={`w-full sm:w-1/2 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base shadow-md hover:shadow-xl ${
-                isSending
-                  ? "opacity-70 cursor-not-allowed"
-                  : "hover:scale-[1.02]"
-              }`}
-            >
-              {isSending ? "Sending..." : "Send Email"}
-            </button>
-
-            {/* WhatsApp Button */}
-            <button
-              type="button"
-              onClick={sendToWhatsApp}
-              className="w-full sm:w-1/2 bg-gradient-to-r from-green-500 via-green-600 to-emerald-500 text-white py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base shadow-md hover:scale-[1.02] hover:shadow-xl"
-            >
-              Send via WhatsApp
-            </button>
-          </div>
-
-          {/* Status Messages */}
-          {sent && (
-            <p className="text-green-600 text-center font-medium mt-4">
-              ✅ Message sent successfully!
+          {/* Error Message */}
+          {error && (
+            <p className="text-red-500 text-sm text-center font-medium">
+              {error}
             </p>
           )}
-          {error && (
-            <p className="text-red-600 text-center font-medium mt-4">{error}</p>
-          )}
-        </form>
+
+          {/* WhatsApp Button */}
+          <button
+            type="button"
+            onClick={sendToWhatsApp}
+            className="w-full bg-indigo-800 text-white py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base shadow-md hover:scale-[1.02] hover:shadow-xl"
+          >
+            Send
+          </button>
+        </div>
       </div>
     </section>
   );
 }
 
 export default ContactForm;
+
+
 
 

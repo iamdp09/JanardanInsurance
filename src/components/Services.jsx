@@ -325,14 +325,14 @@ function Services() {
 
   return (
     <section id="services" className="container mx-auto px-6 sm:px-10 mt-24">
-      <h2 className="text-3xl sm:text-4xl font-bold font-pops text-center mb-12 text-blue-900">
+      <h2 className="text-3xl sm:text-4xl font-bold font-pops text-center mb-12 text-indigo-900">
         Our Services
       </h2>
 
       <div className="relative bg-white rounded-2xl shadow-xl p-8 sm:p-12 overflow-hidden">
         {/* Decorative blurred gradients */}
-        <div className="absolute top-0 right-0 w-60 h-60 bg-purple-400/25 rounded-full blur-[90px]"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-300/25 rounded-full blur-[100px]"></div>
+        {/* <div className="absolute top-0 right-0 w-60 h-60 bg-purple-400/25 rounded-full blur-[90px]"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-300/25 rounded-full blur-[100px]"></div> */}
 
         <ul className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {services.map((item, index) => (
@@ -345,7 +345,7 @@ function Services() {
                 alt={item.title}
                 className="h-14 w-14 sm:h-16 sm:w-16 mb-4"
               />
-              <h3 className="text-lg sm:text-xl font-semibold text-blue-900 text-center font-pops">
+              <h3 className="text-lg sm:text-xl font-semibold text-indigo-900 text-center font-pops">
                 {item.title}
               </h3>
               <p className="text-sm sm:text-base text-gray-600 text-center mt-2 leading-snug">

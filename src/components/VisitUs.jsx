@@ -341,12 +341,12 @@ function VisitUs() {
       <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row h-full">
 
         {/* Background Blur Accents */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-400/25 rounded-full blur-[90px]"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-300/25 rounded-full blur-[100px]"></div>
+        {/* <div className="absolute top-0 right-0 w-64 h-64 bg-purple-400/25 rounded-full blur-[90px]"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-300/25 rounded-full blur-[100px]"></div> */}
 
         {/* LEFT - Contact Info */}
         <div className="relative z-10 p-6 sm:p-10 md:w-1/2 flex flex-col justify-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-6 text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl font-bold text-indigo-900 mb-6 text-center md:text-left">
             Visit Us / Contact
           </h2>
 
@@ -365,7 +365,7 @@ function VisitUs() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500">{item.label}</p>
-                  <a href={item.link} className="text-base font-semibold text-blue-900 hover:text-purple-600 transition">
+                  <a href={item.link} className="text-base font-semibold text-indigo-900 hover:text-indigo-900 transition">
                     {item.value}
                   </a>
                 </div>
@@ -379,7 +379,7 @@ function VisitUs() {
               </div>
               <div>
                 <p className="text-xs text-gray-500">Address</p>
-                <address className="not-italic text-base font-semibold text-blue-900 leading-snug">
+                <address className="not-italic text-base font-semibold text-indigo-900 leading-snug">
                   {addressLine1} <br /> {addressLine2} <br /> {cityStateZip}
                 </address>
               </div>
@@ -392,7 +392,7 @@ function VisitUs() {
               </div>
               <div>
                 <p className="text-xs text-gray-500">Office Hours</p>
-                <p className="text-base font-semibold text-blue-900">{hours}</p>
+                <p className="text-base font-semibold text-indigo-900">{hours}</p>
               </div>
             </li>
           </ul>
@@ -403,13 +403,13 @@ function VisitUs() {
               href={googleMapsDirections}
               target="_blank"
               rel="noopener noreferrer"
-              className=" bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:opacity-90 transition"
+              className=" bg-indigo-900 text-white px-6 py-3 rounded-full font-semibold text-center hover:opacity-90 transition"
             >
               Get Directions
             </a>
             <a
               href={`mailto:${email}`}
-              className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-full font-semibold text-center hover:bg-purple-50 transition"
+              className="border border-indigo-800 text-indigo-800 px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-50 transition"
             >
               Email Us
             </a>

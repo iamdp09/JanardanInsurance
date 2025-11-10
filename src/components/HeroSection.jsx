@@ -76,7 +76,7 @@ function HeroSection() {
   return (
     <section
       id="home"
-      className="relative bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-400 text-white py-24 rounded-2xl mx-10 mt-10 overflow-hidden shadow-xl"
+      className="relative bg-indigo-900  text-white py-24 rounded-2xl mx-10 mt-10 overflow-hidden shadow-xl"
     >
       {/* Background Decorative Circle */}
       <div className="absolute top-10 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
@@ -113,7 +113,7 @@ function HeroSection() {
         <div className="flex justify-center gap-4">
           <button
             onClick={() => scrollToSection("services")}
-            className="font-pops bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+            className="font-pops bg-white text-indigo-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
           >
             Services
           </button>
