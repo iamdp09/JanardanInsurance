@@ -276,7 +276,7 @@ function NavBar() {
           />
         </div>
         <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold font-pops tracking-wide transition-all duration-300">
-          Janardan<span className="text-sky-100">Insurance</span>
+          Janardan<span>Insurance</span>
         </h1>
       </div>
 
