@@ -249,8 +249,8 @@ import bike from "../assets/v2_icon_bike.svg";
 import car from "../assets/v2_icon_car.svg";
 import family from "../assets/v2_icon_family.svg";
 import health from "../assets/v2_icon_health.svg";
-import fire from "../assets/fire-svgrepo-com.svg";
-import material from "../assets/warehouse.svg";
+import fire from "../assets/fire-svg.svg";
+import material from "../assets/cartoon2.svg";
 
 function Insurances() {
   const insurances = [
@@ -308,7 +308,7 @@ function Insurances() {
           {[
             {
               text: "Janardan Insurance helped me find the best car insurance at the lowest rate!",
-              name: "Pradeep Sharma",
+              name: "Rakesh Sharma",
             },
             {
               text: "The team is supportive and makes the process easy.",
@@ -316,7 +316,7 @@ function Insurances() {
             },
             {
               text: "Their service is professional and responsive.",
-              name: "Rakesh Sharma",
+              name: "Pradeep Sharma",
             },
           ].map((item, index) => (
             <div
